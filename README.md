@@ -1,4 +1,11 @@
 # MLTransformersProjects
+### Requirements:
+* Python 3.7+
+* Transformers 3.5.0
+* Scikit Learn 0.22.1
+* Pandas 1.0.1
+
+
 ### Two usecase samples of Transformers:
 #### ESGTextFactorGenerator.py:
 > ESG or Enviromental Social Governance are the three central Pillars in measuring the sustainability and societal impact of an investment in a company or business. These criteria help to better determine the future financial performance of companies (return and risk). Within the Pillars Factors are used to break down the different metrics from which a score can be drawn. Each ESG vendor currently uses their own version of these pillars which can be challenging when trying to map them to one another. As part of a bigger project ESGTextFactorGenerator.py creates corpora that can be used to futher train a mapping model.
