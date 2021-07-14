@@ -6,7 +6,7 @@ PATH_OUT = os.path.join(os.path.dirname(__file__), 'Output')
 
 model = T5ForConditionalGeneration.from_pretrained('t5-large')
 tokenizer = T5Tokenizer.from_pretrained('t5-large')
-device = torch.device('cpu')
+device = torch.device('cuda')
 chap_n = 0
 with open(os.path.join(PATH_DOC, 'literature_and_revolution_byTrosky.txt'), 'r') as marx:
     with open(os.path.join(PATH_OUT, 'literature_and_revolution_byTrosky_Summarized.txt'), 'w') as out:
@@ -25,7 +25,7 @@ with open(os.path.join(PATH_DOC, 'literature_and_revolution_byTrosky.txt'), 'r')
                                              num_beams=4,
                                              no_repeat_ngram_size=2,
                                              min_length=30,
-                                             max_length=100,
+                                             max_length=60,
                                              early_stopping=True)
                 output = tokenizer.decode(summary_ids[0], skip_special_tokens=True)
                 out.write('{}\n'.format(output))
